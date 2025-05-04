@@ -1,10 +1,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import Icon from "@/components/ui/icon";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 
 const Index = () => {
@@ -84,34 +82,11 @@ const Index = () => {
           </div>
         </section>
         
-        {/* Этапы работ */}
-        <section className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Как мы работаем</h2>
-          <div className="space-y-6">
-            {[
-              { step: 1, title: "Консультация и выбор проекта", description: "Бесплатная консультация, подбор оптимального проекта под ваши потребности и бюджет." },
-              { step: 2, title: "Заключение договора", description: "Составление сметы, согласование всех деталей и подписание договора." },
-              { step: 3, title: "Строительство", description: "Строительство дома под ключ с соблюдением всех технологий и сроков." }
-            ].map((item, idx) => (
-              <div key={idx} className="flex flex-col md:flex-row items-start py-6">
-                <div className="bg-primary text-white font-bold text-xl rounded-full h-12 w-12 flex items-center justify-center flex-shrink-0 mb-4 md:mb-0 md:mr-6">
-                  {item.step}
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
-                  {idx < 2 && <Separator className="mt-6 md:hidden" />}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-        
-        {/* Форма связи */}
+        {/* Форма обратной связи */}
         <section className="py-16 bg-primary/5 px-4 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Остались вопросы?</h2>
-            <p className="text-gray-600 mb-8">Оставьте заявку, и мы свяжемся с вами для бесплатной консультации</p>
+            <h2 className="text-3xl font-bold mb-4">Нужна консультация?</h2>
+            <p className="text-gray-600 mb-8">Оставьте заявку, и мы перезвоним вам для бесплатной консультации</p>
             <Card className="p-6">
               <form className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -137,7 +112,32 @@ const Index = () => {
           </div>
         </section>
       </main>
-      <Footer />
+      
+      <footer className="bg-gray-900 text-white py-8">
+        <div className="max-w-7xl mx-auto px-4 text-center md:text-left md:flex md:justify-between md:items-center">
+          <div className="mb-4 md:mb-0">
+            <div className="font-bold text-xl flex items-center justify-center md:justify-start">
+              <Icon name="Home" className="mr-2 h-6 w-6" />
+              <span>СтройДом Челябинск</span>
+            </div>
+            <p className="text-sm text-gray-400 mt-2">Строительство каркасных домов под ключ</p>
+          </div>
+          <div className="flex justify-center md:justify-start items-center">
+            <a href="tel:+73517123456" className="text-white hover:text-primary mx-2">
+              <Icon name="Phone" className="h-5 w-5" />
+            </a>
+            <a href="mailto:info@строидом74.рф" className="text-white hover:text-primary mx-2">
+              <Icon name="Mail" className="h-5 w-5" />
+            </a>
+            <a href="#" className="text-white hover:text-primary mx-2">
+              <Icon name="MapPin" className="h-5 w-5" />
+            </a>
+          </div>
+        </div>
+        <div className="text-center text-sm text-gray-500 mt-4">
+          © {new Date().getFullYear()} СтройДом Челябинск. Все права защищены.
+        </div>
+      </footer>
     </div>
   );
 };
